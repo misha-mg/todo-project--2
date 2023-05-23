@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
+body{
+    background-color: #E8E8E8;
+    color: #875D5E;
+}
+h1{
+    text-align: center;
+
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-item{
+    width: 70%;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    background-color: #C2D0C1;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list-item--content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.item-name{
+    word-wrap: break-word;
 }
-
-.App-link {
-  color: #61dafb;
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    /* color: #875D5E; */
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input[type='text'] {
+    width: 45%;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    background-color: #C2D0C1;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    color: #875D5E;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+input {
+    margin: 0;
+    padding: 0;
+}
+.item-name{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+.item-backet{
+    cursor: pointer;
+    transition: all 1s;
+}
+.item-backet:hover{
+    transform: scale(1.1)
+}
+.total-item{
+    margin-right: 20px;
+    display: none;
+}
+.done-item{
+    display: none;
+    margin-right: 20px;
+}
+.sort-item{
+    display: none;
+}
+.active{
+    display: block;
+}
+.done{
+    text-decoration: line-through;
+}
+.items-info{
+    display: flex;
+    /* justify-content: flex-start; */
+    align-items: center;
+    margin: 0 auto;
+    width: 70%;
 }
