@@ -25,14 +25,17 @@ function App() {
     },
   });
 
+  const [idCount, setIdCount] = useState(0)
+
   const onKeyPressHandler = (e) => {
     if (e.key === "Enter" && name.trim().length >= 1) {
+      setIdCount(idCount + 1)
       e.preventDefault();
-      console.log("lkj");
+      console.log(idCount);
       setTodos([
         ...todos,
         {
-          id: todos.length,
+          id: idCount,
           name,
           isChecked: false,
         },
@@ -45,6 +48,7 @@ function App() {
     const newArr = [].concat(todos);
     newArr[id].isChecked = !newArr[id].isChecked;
     document.getElementsByClassName("list-item")[id].classList.toggle("done");
+    console.log('чекнулся номер: ', id);
     setTodos(newArr);
   };
 
@@ -53,6 +57,7 @@ function App() {
       const newList = [...todos];
       newList.splice(id, 1);
       setTodos(newList);
+      console.log('удалился номер: ', id);
     };
   }
 
@@ -100,18 +105,18 @@ function App() {
         onKeyDown={onKeyPressHandler}
       ></input>
       <div className="items-info">
-        <div id="total-item" className="total-item active">
-          Total: {todos.length}
-        </div>
-        <div id="done-item" className="done-item active ">
-          Done: {todos.filter((item) => item.isChecked === true).length}
-        </div>
-        <div id="sort-item" className="sort-item">
+      <div id="sort-item" className="sort-item">
           <ThemeProvider theme={theme}>
             <Button variant="outlined" color="primary" onClick={handleSort}>
               sort
             </Button>
           </ThemeProvider>
+        </div>
+        <div id="total-item" className="total-item active">
+          Total: {todos.length}
+        </div>
+        <div id="done-item" className="done-item active ">
+          Done: {todos.filter((item) => item.isChecked === true).length}
         </div>
       </div>
       <div className="list">
@@ -122,7 +127,7 @@ function App() {
                 hendleDelete={handleDeleteFactory}
                 id={index}
                 toggleCheckbox={toggleCheckbox}
-                key={item.id}
+                key={item.id + item.name}
                 name={item.name}
                 isChecked={item.isChecked}
               />

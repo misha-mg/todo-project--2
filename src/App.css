@@ -4,7 +4,7 @@ body{
 }
 h1{
     text-align: center;
-
+    font-size: 45px;
 }
 .list{
     display: flex;
@@ -83,6 +83,7 @@ input {
 }
 .sort-item{
     display: none;
+    margin-right: 20px;
 }
 .active{
     display: block;
@@ -95,5 +96,5 @@ input {
     /* justify-content: flex-start; */
     align-items: center;
     margin: 0 auto;
-    width: 70%;
+    width: 45%;
 }
