@@ -84,7 +84,7 @@ function App() {
       } else if (sortCount == 1) {
         newArr.sort((a, b) => b.isChecked - a.isChecked).reverse();
       } else if (sortCount == 2) {
-        newArr.sort((a, b) => b.id - a.id);
+        newArr.sort((a, b) => a.id - b.id);
       setSortCount(0);
       }
       console.log(sortCount);
@@ -105,19 +105,22 @@ function App() {
         onKeyDown={onKeyPressHandler}
       ></input>
       <div className="items-info">
-      <div id="sort-item" className="sort-item">
+        <div id="sort-item" className="sort-item">
           <ThemeProvider theme={theme}>
             <Button variant="outlined" color="primary" onClick={handleSort}>
               sort
             </Button>
           </ThemeProvider>
         </div>
-        <div id="total-item" className="total-item active">
-          Total: {todos.length}
+        <div className="data-info">
+            <div id="total-item" className="total-item active">
+              Total: {todos.length}
+            </div>
+            <div id="done-item" className="done-item active ">
+              Done: {todos.filter((item) => item.isChecked === true).length}
+            </div> 
         </div>
-        <div id="done-item" className="done-item active ">
-          Done: {todos.filter((item) => item.isChecked === true).length}
-        </div>
+        
       </div>
       <div className="list">
         {todos &&

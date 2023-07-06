@@ -42,7 +42,7 @@ input[type='checkbox'] {
     /* color: #875D5E; */
 }
 input[type='text'] {
-    width: 45%;
+    width: 55%;
     margin: 10px 0px;
     padding: 10px 15px;
     background-color: #C2D0C1;
@@ -96,5 +96,36 @@ input {
     /* justify-content: flex-start; */
     align-items: center;
     margin: 0 auto;
-    width: 45%;
+    width: 55%;
+}
+.data-info{
+    display: flex;
+
+}
+
+@media (max-width: 568px) {
+
+    input[type='text'] {
+        width: 65%;
+        margin: 10px 0px;
+        padding: 10px 15px;
+        background-color: #C2D0C1;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        color: #875D5E;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .items-info{
+        width: 65%;
+    }
+    .list-item{
+        width: 80%;
+    }
+
 }
